@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Working of addeventlistener
+		for keydown on a canvas
+	</title>
+	
+	<style>
+		body {
+			display: block;
+			margin-top: 8%;
+		}
+		h1 {
+			color:green;
+			text-align:center;
+		}
+		
+		/* Canvas decoration */
+		canvas {
+			display: block;
+			margin: 0 auto;
+			background: green;
+			border: 2px solid black;
+			height: 300px;
+			width: 300px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>GeeksforGeeks</h1>
+	<canvas id="canvas"></canvas>
+	
+	<script>
+		var lastDownTarget, canvas;
+		window.onload = function() {
+			canvas = document.getElementById('canvas');
+			
+			/* For mouse event */
+			document.addEventListener('mousedown',
+							function(event)
+			{
+				lastDownTarget = event.target;
+				alert('Mousedown Event');
+			}, false);
+			
+			/* For keyboard event */
+			document.addEventListener('keydown',
+							function(event)
+			{
+				if(event.key == canvas) {
+					alert('Keydown event! Key pressed: '
+									+ event.key);
+				}
+			}, false);
+		}
+	</script>
+</body>
+
+</html>

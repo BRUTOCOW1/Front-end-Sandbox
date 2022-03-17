@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Yeetus</title>
+<style>
+body {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+p {
+  max-width: 500px;
+  align-content: center;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.custom-field {
+  position: relative;
+  font-size: 14px;
+  border-top: 20px solid transparent;
+  margin-bottom: 5px;
+  --field-padding: 12px;
+}
+
+.custom-field input {
+  border: none;
+  overflow-wrap: break-word; 
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #f2f2f2f2;
+  padding: var(--field-padding);
+  text-overflow: ellipsis;
+  border-radius: 3px;
+  width: 500px;
+  height: 150px;
+  outline: none;
+  font-size: 14px;
+}
+
+.custom-field .placeholder {
+  position: absolute;
+  left: var(--field-padding);
+  width: calc(100% - (var(--field-padding) * 2));
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  top: 22px;
+  line-height: 100%;
+  transform: translateY(-50%);
+  color: #aaa;
+  transition: 
+    top 0.3s ease,
+    color 0.3s ease,
+    font-size 0.3s ease;
+}
+
+.custom-field input.dirty + .placeholder,
+.custom-field input:focus + .placeholder,
+.custom-field input:not(:placeholder-shown) + .placeholder {
+  top: -10px;
+  font-size: 10px;
+  color: red;
+}
+
+
+
+/* ONE */
+.custom-field.one input {
+  background: none;
+  border: 2px solid #ddd;
+  transition: border-color 0.3s ease;
+}
+
+.custom-field.one input + .placeholder {
+  left: 8px;
+  padding: 0 5px;
+}
+
+.custom-field.one input.dirty,
+.custom-field.one input:not(:placeholder-shown),
+.custom-field.one input:focus {
+  border-color: red;
+  transition-delay: 0.1s
+}
+
+.custom-field.one input.dirty + .placeholder,
+.custom-field.one input:not(:placeholder-shown) + .placeholder,
+.custom-field.one input:focus + .placeholder {
+  top: 0;
+  font-size: 10px;
+  color: #222;
+  background: #fff;
+  width: auto
+}
+</style>
+<script src="Introduction.js"></script>
+
+</head>
+<body>
+
+<label class="custom-field">
+  <input id= "mobile" type="email" placeholder="&nbsp;"/>
+  <span class="placeholder">Enter Text</span>
+</label>
+<button id="Recal" onclick="recalibrate()">Recalculate!</button>
+<button id="encrypt" onclick="link()">encrypt!</button>
+
+
+
+<p class = "mainCharacter" id="texto">Penis</p>
+<p class = "side character" id="chump"></p>
+<label class="custom-field">
+  <input id= "linear" type="email" placeholder="&nbsp;"/>
+  <span class="placeholder">Enter a number for the cypher</span>
+</label>
+<p class="caesar" id="blank"></p>
+</body>
+</html>
